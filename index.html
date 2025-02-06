@@ -17,6 +17,9 @@
         <button @click="age--">Decrease age</button>
 
         <button @click="changeAuthor">Change author</button>
+
+        <p>From Indonesia?: {{pick}}</p>
+        <input type="radio" v-model="pick" v-for="option in options" :key="option" :value="option" />
     </div>
 
     <script src="app.js"></script>

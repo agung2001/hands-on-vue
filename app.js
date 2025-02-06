@@ -8,7 +8,9 @@ const app = createApp({
             title: 'Learn Vue JS',
             author: 'Agung',
             location: 'Jakarta',
-            age: 20
+            age: 20,
+            options: ['Yes', 'No'],
+            pick: 'Yes'
         }
     },
 
