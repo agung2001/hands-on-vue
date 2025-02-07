@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 .backdrop {
     position: fixed;
     top: 0;
@@ -21,5 +21,8 @@
     margin: 100px auto;
     background: white;
     border-radius: 10px;
+}
+h1 {
+    color: #ff0000;
 }
 </style>

@@ -7,6 +7,7 @@ import Reference from './Reference.vue';
     <div>
         <h1>Main</h1>
         <Reference />
+        <Modal />
     </div>
 </template>
 
