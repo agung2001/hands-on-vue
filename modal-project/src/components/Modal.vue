@@ -1,7 +1,13 @@
+<script setup lang="ts">
+import { IModal } from '../types'
+const { modal } = defineProps<{ modal: IModal }>()
+</script>
+
 <template>
     <div class="backdrop">
         <div class="modal">
-            <h1>Modal</h1>
+            <h1>{{ modal.title }}</h1>
+            <p>{{ modal.description }}</p>
         </div>
     </div>
 </template>
