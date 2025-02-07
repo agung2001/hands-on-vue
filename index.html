@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{title}}</h1>
+        <h1>📖 {{title}}</h1>
         <p>By {{author}} from {{location}}, {{age}} years old</p>
 
         <button @click="age++">Increase age</button>
@@ -18,12 +18,32 @@
         <button @click="changeAuthor">Change author</button>
 
         <div v-if="showDetails">
-            <p>From Indonesia?: {{isIndonesian ? 'Yes' : 'No'}}</p>
+            <h3>From Indonesia?: {{isIndonesian ? 'Yes' : 'No'}}</h3>
             <input type="radio" v-model="isIndonesian" v-for="option in [true, false]" :key="option" :value="option" :id="option">
+
+            <h3>Portfolio</h3>
+            <div v-for="item in portfolio" :key="item.name">
+                <a :href="item.url" target="_blank">{{item.name}}</a>
+            </div>
         </div>
 
         <button @click="showDetails = !showDetails">{{showDetails ? 'Hide' : 'Show'}} details</button>
+
+        <h2>🖱️ Mouse Events</h2>
+        <div class="box" @mouseover="handleMouseEvent">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleMouseEvent">mouseleave (leave)</div>
+        <div class="box" @dblclick="handleMouseEvent">dblclick</div>
+        <div class="box" @mousemove="handleMouseMoveEvent">mousemove {{mouse.x}}, {{mouse.y}}</div>
     </div>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #b9b9b9;
+            border: 1px solid #000;
+        }
+    </style>
 
     <script src="app.js"></script>
 </body>
