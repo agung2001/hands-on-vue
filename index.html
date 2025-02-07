@@ -15,11 +15,14 @@
 
         <button @click="age++">Increase age</button>
         <button @click="age--">Decrease age</button>
-
         <button @click="changeAuthor">Change author</button>
 
-        <p>From Indonesia?: {{pick}}</p>
-        <input type="radio" v-model="pick" v-for="option in options" :key="option" :value="option" />
+        <div v-if="showDetails">
+            <p>From Indonesia?: {{isIndonesian ? 'Yes' : 'No'}}</p>
+            <input type="radio" v-model="isIndonesian" v-for="option in [true, false]" :key="option" :value="option" :id="option">
+        </div>
+
+        <button @click="showDetails = !showDetails">{{showDetails ? 'Hide' : 'Show'}} details</button>
     </div>
 
     <script src="app.js"></script>

@@ -9,8 +9,8 @@ const app = createApp({
             author: 'Agung',
             location: 'Jakarta',
             age: 20,
-            options: ['Yes', 'No'],
-            pick: 'Yes'
+            isIndonesian: true,
+            showDetails: false
         }
     },
 
