@@ -22,7 +22,7 @@
             <input type="radio" v-model="isIndonesian" v-for="option in [true, false]" :key="option" :value="option" :id="option">
 
             <h3>Portfolio</h3>
-            <div v-for="item in portfolio" :key="item.name">
+            <div class="box" v-for="item in filteredPortfolio" :key="item.name" @click="toggleVuePortfolio(item)">
                 <a :href="item.url" target="_blank">{{item.name}}</a>
             </div>
         </div>
