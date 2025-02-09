@@ -5,7 +5,7 @@ import Modals from './Modals.vue';
 
 <template>
     <div>
-        <h1>Main</h1>
+        <h1 class="text-3xl font-bold">Main</h1>
 
         <h2>Reference</h2>
         <Reference />
