@@ -21,7 +21,9 @@ const route = useRoute();
           <!-- Navbar Menu -->
           <div class="ml-10 flex items-center space-x-4">
             <template v-for="menu in routes" :key="menu.path">
-              <RouterLink :to="menu.path" 
+              <RouterLink 
+                v-if="menu.isMenu" 
+                :to="menu.path" 
                 :class="{'bg-yellow-300': route.path === menu.path, 'hover:bg-yellow-400': route.path !== menu.path}" 
                 class="px-3 py-2"
               >

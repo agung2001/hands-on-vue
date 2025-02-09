@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 import type { IModal } from '../../types'
-import Modal from './Modal.vue'
+import Modal from '../library/Modal.vue'
 
 // Modals array
 const modals: IModal[] = reactive([

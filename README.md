@@ -1,3 +1,4 @@
+![](screenshot.png)
 # Learn Vue JS
 
 ## Installation
