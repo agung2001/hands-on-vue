@@ -1,12 +1,12 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
+import { createWebHistory, createRouter } from 'vue-router';
 import { createApp } from 'vue'
 import App from './App.vue'
+import routes from './routes'
 import './assets/tailwindcss.css'
 import './assets/global.css'
-import routes from './routes'
 
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes,
 })
 

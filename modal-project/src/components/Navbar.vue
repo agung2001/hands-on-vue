@@ -1,23 +1,6 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
-
-const menus = reactive([
-  {
-    name: 'Home',
-    href: '/',
-    isActive: true,
-  },
-  {
-    name: 'Reference',
-    href: '/reference',
-    isActive: false,
-  },
-  {
-    name: 'Modal',
-    href: '/modal',
-    isActive: false,
-  },
-])
+import { RouterLink } from 'vue-router';
+import routes from '../routes';
 </script>
 
 <template>
@@ -34,12 +17,13 @@ const menus = reactive([
   
           <!-- Navbar Menu -->
           <div class="ml-10 flex items-center space-x-4">
-            <template v-for="menu in menus" :key="menu.href">
-              <a :href="menu.href" 
+            <template v-for="menu in routes" :key="menu.path">
+              <RouterLink :to="menu.path" 
                 :class="{'bg-yellow-400': menu.isActive, 'hover:bg-gray-700 hover:text-blue-500': !menu.isActive}" 
-                class="px-3 py-2">
+                class="px-3 py-2"
+              >
                   {{ menu.name }}
-              </a>
+              </RouterLink>
             </template>
           </div>
         </div>
