@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, onUpdated } from 'vue';
-import { IModal } from '../types'
+import { IModal } from '../../types'
 
 const { modal } = defineProps<{ modal: IModal }>()
 const emit = defineEmits(['close', 'randomize-image'])

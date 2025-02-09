@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
-import type { IModal } from '../types'
+import type { IModal } from '../../types'
 import Modal from './Modal.vue'
 
 // Modals array
