@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { RouterLink, useRoute } from 'vue-router';
+import { RouterLink, useRoute, useRouter } from 'vue-router';
 import routes from '../routes';
 
+const router = useRouter();
 const route = useRoute();
 </script>
 
@@ -27,6 +28,19 @@ const route = useRoute();
                   {{ menu.name }}
               </RouterLink>
             </template>
+
+            <button 
+              @click="() => { router.back() }"
+              class="cursor-pointer bg-gray-100 text-white px-4 py-2 rounded-md"
+            >
+              ⬅️
+            </button>
+            <button 
+              @click="() => { router.forward() }"
+              class="cursor-pointer bg-gray-100 text-white px-4 py-2 rounded-md"
+            >
+              ➡️
+            </button>
           </div>
         </div>
       </div>
