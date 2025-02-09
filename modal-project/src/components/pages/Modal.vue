@@ -30,14 +30,15 @@ onUpdated(() => {
         class="backdrop" 
         @click.self="() => { emit('close') }"
     >
-        <div v-if="showModal" class="modal">
-            <h1>{{ modal.title }}</h1>
-            <p>{{ modal.description }}</p>
-            <div>
-                <button @click="() => { emit('randomize-image') }">Randomize Image</button>
-            </div>
+        <div v-if="showModal" class="modal content-center">
+            <h3 class="text-2xl font-bold">{{ modal.title }}</h3>
+            <p class="text-gray-500">{{ modal.description }}</p>
+            <button @click="() => { emit('randomize-image') }" class="cursor-pointer bg-blue-500 text-white px-6 py-2 my-4 shadow-md rounded-md">
+                Randomize Image
+            </button>
             <img
                 width="200px" 
+                class="mx-auto"
                 :src="modal.image"
                 :alt="modal.title"
             >
@@ -47,6 +48,7 @@ onUpdated(() => {
         <div v-else class="loading">
             <img
                 width="200px" 
+                class="mx-auto"
                 src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXN0d2d2dTBuenpoOG9lbTd0Z2p2aTV5MmF5dnlyODJjdHZ3cGwyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aSzp02xpRLOhy/giphy.gif"
                 :alt="modal.title"
             >

@@ -29,7 +29,7 @@ const getRandomImage = () => {
 </script>
 
 <template>
-    <h1 class="text-3xl font-bold">Modal</h1>
+    <h1 class="text-4xl font-bold py-4">Modal</h1>
     <template v-for="(modal, index) in modals" :key="index">  
         <teleport to=".modals">
             <Modal 
@@ -48,7 +48,7 @@ const getRandomImage = () => {
                 </template>
             </Modal>
         </teleport>
-        <button @click="() => { modals[index].isOpen = true }">
+        <button @click="() => { modals[index].isOpen = true }" class="cursor-pointer bg-blue-500 text-white px-6 py-2 mr-2 shadow-md rounded-md">
             Open {{ modal.title }}
         </button>
     </template>

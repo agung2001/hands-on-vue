@@ -12,9 +12,11 @@ const handleClick = () => {
 </script>
 
 <template>
-    <h1 class="text-3xl font-bold">Reference</h1>
+    <h1 class="text-4xl font-bold py-4">Reference</h1>
     <h2>This is a reference component</h2>
 
-    <input type="text" ref="inputRef">
-    <button @click="handleClick">Click me</button>
+    <div class="flex items-center mt-4">
+        <input type="text" ref="inputRef" class="border-2 border-gray-300 rounded-md p-2 mr-2">
+        <button @click="handleClick" class="cursor-pointer bg-blue-500 text-white p-2">Click me</button>
+    </div>
 </template>
