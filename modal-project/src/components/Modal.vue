@@ -6,14 +6,14 @@ const emit = defineEmits(['open', 'close'])
 </script>
 
 <template>
-    <button @click="() => { emit('open') }">
-        Open Modal
-    </button>
     <div v-if="modal.isOpen">
-        <div class="backdrop" @click="() => { emit('close') }">
+        <div class="backdrop" @click.self="() => { emit('close') }">
             <div class="modal">
                 <h1>{{ modal.title }}</h1>
                 <p>{{ modal.description }}</p>
+                <slot name="content"></slot>
+                <hr>
+                <slot name="footer"></slot>
             </div>
         </div>
     </div>
