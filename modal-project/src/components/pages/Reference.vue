@@ -12,6 +12,7 @@ const handleClick = () => {
 </script>
 
 <template>
+    <h1 class="text-3xl font-bold">Reference</h1>
     <h2>This is a reference component</h2>
 
     <input type="text" ref="inputRef">

@@ -29,6 +29,7 @@ const getRandomImage = () => {
 </script>
 
 <template>
+    <h1 class="text-3xl font-bold">Modal</h1>
     <template v-for="(modal, index) in modals" :key="index">  
         <teleport to=".modals">
             <Modal 

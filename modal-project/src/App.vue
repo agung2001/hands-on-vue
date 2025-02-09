@@ -6,12 +6,5 @@ import Reference from './components/pages/Reference.vue';
 
 <template>
     <Navbar />
-
-    <h1 class="text-3xl font-bold">Main</h1>
-
-    <h2>Reference</h2>
-    <Reference />
-
-    <h2>Modal</h2>
-    <Modals />
+    <router-view />
 </template>
