@@ -4,4 +4,5 @@ export interface IModal {
     description?: string
     image?: string
     isOpen?: boolean
+    delay?: number
 }

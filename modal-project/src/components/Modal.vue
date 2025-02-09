@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { IModal } from '../types'
 
 const { modal } = defineProps<{ modal: IModal }>()
-const emit = defineEmits(['open', 'close'])
+const emit = defineEmits(['close'])
+const showModal = ref(false)
 
 onMounted(() => {
-    console.log(`${modal.title} is mounted`)
+    console.log(`${modal.title} is mounted, open in ${modal.delay}ms`)
+    setTimeout(() => {
+        showModal.value = true
+    }, modal.delay)
 })
 
 onUnmounted(() => {
@@ -15,13 +19,19 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="backdrop" @click.self="() => { emit('close') }">
-        <div class="modal">
+    <div 
+        class="backdrop" 
+        @click.self="() => { emit('close') }"
+    >
+        <div v-if="showModal" class="modal">
             <h1>{{ modal.title }}</h1>
             <p>{{ modal.description }}</p>
             <slot name="content"></slot>
             <hr>
             <slot name="footer"></slot>
+        </div>
+        <div v-else class="loading">
+            <h1>Loading...</h1>
         </div>
     </div>
 </template>
