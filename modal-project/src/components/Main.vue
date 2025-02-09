@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import Reference from './Reference.vue';
+import Navbar from './Navbar.vue';
 import Modals from './Modals.vue';
+import Reference from './Reference.vue';
 </script>
 
 <template>
-    <div>
-        <h1 class="text-3xl font-bold">Main</h1>
+    <Navbar />
 
-        <h2>Reference</h2>
-        <Reference />
+    <h1 class="text-3xl font-bold">Main</h1>
 
-        <h2>Modal</h2>
-        <Modals />
-    </div>
+    <h2>Reference</h2>
+    <Reference />
+
+    <h2>Modal</h2>
+    <Modals />
 </template>
 
