@@ -28,23 +28,25 @@ const modals: IModal[] = reactive([
         <Reference />
 
         <h2>Modal</h2>
-        <template v-for="(modal, index) in modals" :key="index">    
-            <Modal 
-                :modal="modal" 
-                @open="() => { modal.isOpen = true }"
-                @close="() => { modal.isOpen = false }" 
-            >
-                <template #content>
-                    <img
-                        width="100px" 
-                        :src="modal.image"
-                        :alt="modal.title"
-                    >
-                </template>
-                <template #footer>
-                    Copyright {{ new Date().getFullYear() }} by Agung Sundoro
-                </template>
-            </Modal>
+        <template v-for="(modal, index) in modals" :key="index">  
+            <teleport to=".modals">
+                <Modal 
+                    :modal="modal" 
+                    @open="() => { modal.isOpen = true }"
+                    @close="() => { modal.isOpen = false }" 
+                >
+                    <template #content>
+                        <img
+                            width="100px" 
+                            :src="modal.image"
+                            :alt="modal.title"
+                        >
+                    </template>
+                    <template #footer>
+                        Copyright {{ new Date().getFullYear() }} by Agung Sundoro
+                    </template>
+                </Modal>
+            </teleport>  
             <button @click="() => { modals[index].isOpen = true }">
                 Open {{ modal.title }}
             </button>
