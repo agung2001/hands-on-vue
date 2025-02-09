@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
 import routes from '../routes';
+
+const route = useRoute();
 </script>
 
 <template>
@@ -19,7 +21,7 @@ import routes from '../routes';
           <div class="ml-10 flex items-center space-x-4">
             <template v-for="menu in routes" :key="menu.path">
               <RouterLink :to="menu.path" 
-                :class="{'bg-yellow-400': menu.isActive, 'hover:bg-gray-700 hover:text-blue-500': !menu.isActive}" 
+                :class="{'bg-yellow-300': route.path === menu.path, 'hover:bg-yellow-400': route.path !== menu.path}" 
                 class="px-3 py-2"
               >
                   {{ menu.name }}
