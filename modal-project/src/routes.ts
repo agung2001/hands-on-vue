@@ -1,4 +1,3 @@
-import Home from './components/pages/Home.vue';
 import Modals from './components/pages/Modals.vue';
 import NotFound from './components/pages/NotFound.vue';
 import Post from './components/pages/Post.vue';
@@ -7,21 +6,15 @@ import Reference from './components/pages/Reference.vue';
 
 export default [
     {
-        name: 'Home',
+        name: 'Posts',
         path: '/',
-        component: Home,
+        component: Posts,
         isMenu: true,
     },
     {
         name: 'Reference',
         path: '/reference',
         component: Reference,
-        isMenu: true,
-    },
-    {
-        name: 'Posts',
-        path: '/posts',
-        component: Posts,
         isMenu: true,
     },
     {
