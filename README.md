@@ -6,7 +6,18 @@
 - Install Vue CLI : `npm install -g @vue/cli`
 - Create a new project : `vue create {project-name}`
 
-## Install modal-project
+## Modal/Popup Project
+This project is a simple modal/popup project that uses Vue 3 and Tailwind CSS.
+This project has some advanced features like :
+- Dynamic routes using vue-router
+- Modal/Popup components with delay and transition
+- Navigation between pages
+- 404 page
+- Posts page with fetch from jsonplaceholder
+- Post page with fetch from jsonplaceholder
+- Reference page displaying input element with ref
+
+### Installation
 - Run `cd modal-project`
 - Run `pnpm install`
 - Run `pnpm serve`
