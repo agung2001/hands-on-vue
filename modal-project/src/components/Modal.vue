@@ -8,7 +8,7 @@ const showModal = ref(false)
 
 // Open modal lifecycle, implement delay
 onMounted(() => {
-    console.log(`${modal.title} is mounted, open in ${modal.delay}ms`)
+    console.log(`✅ ${modal.title} is mounted, open in ${modal.delay}ms`)
     setTimeout(() => {
         showModal.value = true
     }, modal.delay)
@@ -16,12 +16,12 @@ onMounted(() => {
 
 // Close modal lifecycle
 onUnmounted(() => {
-    console.log(`${modal.title} is unmounted`)
+    console.log(`❌ ${modal.title} is unmounted`)
 })
 
 // Update modal lifecycle
 onUpdated(() => {
-    console.log(`${modal.title} is updated`)
+    console.log(`🔄 ${modal.title} is updated`)
 })
 </script>
 
@@ -45,6 +45,11 @@ onUpdated(() => {
             <slot name="footer"></slot>
         </div>
         <div v-else class="loading">
+            <img
+                width="200px" 
+                src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXN0d2d2dTBuenpoOG9lbTd0Z2p2aTV5MmF5dnlyODJjdHZ3cGwyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aSzp02xpRLOhy/giphy.gif"
+                :alt="modal.title"
+            >
             <h1>Loading...</h1>
         </div>
     </div>

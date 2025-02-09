@@ -30,8 +30,9 @@ const getRandomImage = () => {
 
 <template>
     <template v-for="(modal, index) in modals" :key="index">  
-        <teleport to=".modals" v-if="modal.isOpen">
+        <teleport to=".modals">
             <Modal 
+                v-if="modal.isOpen"
                 :modal="modal" 
                 :getRandomImage
                 @close="() => { modal.isOpen = false }" 
