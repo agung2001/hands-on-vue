@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { IModal } from '../types'
+
 const { modal } = defineProps<{ modal: IModal }>()
+const emit = defineEmits(['open', 'close'])
 </script>
 
 <template>
-    <div class="backdrop">
-        <div class="modal">
-            <h1>{{ modal.title }}</h1>
-            <p>{{ modal.description }}</p>
+    <button @click="() => { emit('open') }">
+        Open Modal
+    </button>
+    <div v-if="modal.isOpen">
+        <div class="backdrop" @click="() => { emit('close') }">
+            <div class="modal">
+                <h1>{{ modal.title }}</h1>
+                <p>{{ modal.description }}</p>
+            </div>
         </div>
     </div>
 </template>
