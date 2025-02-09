@@ -3,6 +3,7 @@ import { reactive } from 'vue';
 import type { IModal } from '../types'
 import Modal from './Modal.vue'
 
+// Modals array
 const modals: IModal[] = reactive([
     {
         title: 'Modal 1',
@@ -19,6 +20,12 @@ const modals: IModal[] = reactive([
         isOpen: false
     }
 ])
+
+// Get random image from picsum.photos
+const getRandomImage = () => {
+    const randomId = Math.floor(Math.random() * 300) + 1
+    return `https://picsum.photos/id/${randomId}/200/300`
+}
 </script>
 
 <template>
@@ -26,15 +33,14 @@ const modals: IModal[] = reactive([
         <teleport to=".modals" v-if="modal.isOpen">
             <Modal 
                 :modal="modal" 
+                :getRandomImage
                 @close="() => { modal.isOpen = false }" 
+                @randomize-image="() => { 
+                    const randomImage = getRandomImage()
+                    console.log('Get random image:', randomImage)
+                    modal.image = randomImage
+                }"
             >
-                <template #content>
-                    <img
-                        width="200px" 
-                        :src="modal.image"
-                        :alt="modal.title"
-                    >
-                </template>
                 <template #footer>
                     Copyright {{ new Date().getFullYear() }} by Agung Sundoro
                 </template>
