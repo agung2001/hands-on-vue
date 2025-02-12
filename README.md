@@ -13,12 +13,12 @@
 This project is a simple modal/popup project that uses Vue 3 and Tailwind CSS.
 This project has some advanced features like :
 
-- Dynamic routes using vue-router
+- Dynamic routes using vue-router including 404 page
 - Modal/Popup components with delay and transition
-- Navigation between pages
-- 404 page
 - Posts page with fetch from jsonplaceholder
 - Post page with fetch from jsonplaceholder
+- Tasks page with pinia store
+- Pinia store with async actions
 - Reference page displaying input element with ref
 - Watch page displaying watch and watchEffect
 
@@ -30,8 +30,16 @@ This project has some advanced features like :
 
 ## Resources
 
+- [Pinia Documentation](https://pinia.vuejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [Vue Official Website](https://vuejs.org/)
 - [Vue 3 Documentation](https://vuejs.org/guide/introduction.html)
 - [Vue 3 API](https://v3.vuejs.org/api/)
-- [Tailwind CSS](https://tailwindcss.com/)
 - [W3Schools Vue](https://www.w3schools.com/vue/)
+
+## Tutorial
+
+### Net Ninja
+
+- [Vue 3 Crash Course](https://www.youtube.com/watch?v=YrxBCBibVo0&list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1)
+- [Piniat Crash Course](https://www.youtube.com/watch?v=u0B9dysw29A&list=PL4cUxeGkcC9hp28dYyYBy3xoOdoeNw-hD)
