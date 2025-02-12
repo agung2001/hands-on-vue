@@ -1,7 +1,9 @@
 <script setup>
+import { storeToRefs } from "pinia";
 import { useTaskStore } from "../../stores/TaskStore";
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 const taskStore = useTaskStore();
+const { totalTasks, totalCompletedTasks, totalIncompleteTasks } = storeToRefs(taskStore);
 const newTask = ref("");
 
 const handleSubmit = () => {
@@ -11,12 +13,20 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <button
-    class="cursor-pointer float-right bg-blue-500 text-white px-4 py-2 rounded"
-    @click="taskStore.loadTasks"
-  >
-    Load Tasks from REST API
-  </button>
+  <div class="flex gap-2 float-right">
+    <button
+      class="cursor-pointer bg-orange-500 text-white px-4 py-2 rounded"
+      @click="taskStore.loadTasks"
+    >
+      Load Tasks from REST API
+    </button>
+    <button
+      class="cursor-pointer bg-red-500 text-white px-4 py-2 rounded"
+      @click="taskStore.$reset"
+    >
+      Reset
+    </button>
+  </div>
   <h1 class="text-4xl font-bold py-4">Tasks</h1>
 
   <div class="flex gap-2 py-2 justify-between">
@@ -36,13 +46,13 @@ const handleSubmit = () => {
   <div class="flex gap-2 py-2 justify-between">
     <div class="flex gap-2">
       <p class="bg-gray-100 px-4 py-2 rounded-full text-sm font-bold">
-        Total tasks: {{ taskStore.totalTasks }}
+        Total tasks: {{ totalTasks }}
       </p>
       <p class="bg-gray-100 px-4 py-2 rounded-full text-sm font-bold">
-        Total completed tasks: {{ taskStore.totalCompletedTasks }}
+        Total completed tasks: {{ totalCompletedTasks }}
       </p>
       <p class="bg-gray-100 px-4 py-2 rounded-full text-sm font-bold">
-        Total incomplete tasks: {{ taskStore.totalIncompleteTasks }}
+        Total incomplete tasks: {{ totalIncompleteTasks }}
       </p>
     </div>
 
