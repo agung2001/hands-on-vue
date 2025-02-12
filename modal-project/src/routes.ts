@@ -3,7 +3,7 @@ import NotFound from "./components/pages/NotFound.vue";
 import Post from "./components/pages/Post.vue";
 import Posts from "./components/pages/Posts.vue";
 import Samples from "./components/pages/Samples.vue";
-
+import Tasks from "./components/pages/Tasks.vue";
 export default [
   {
     name: "Posts",
@@ -22,6 +22,12 @@ export default [
     name: "Modals",
     path: "/modals",
     component: Modals,
+    isMenu: true,
+  },
+  {
+    name: "Tasks",
+    path: "/tasks",
+    component: Tasks,
     isMenu: true,
   },
   {
