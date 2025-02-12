@@ -3,13 +3,18 @@ import { useTaskStore } from "../../stores/TaskStore";
 import { ref } from "vue";
 const taskStore = useTaskStore();
 const newTask = ref("");
+
+const handleSubmit = () => {
+  taskStore.addTask(newTask.value);
+  newTask.value = "";
+};
 </script>
 
 <template>
   <h1 class="text-4xl font-bold py-4">Tasks</h1>
 
   <div class="flex gap-2 py-2 justify-between">
-    <form @submit.prevent="taskStore.addTask(newTask)" class="flex gap-2">
+    <form @submit.prevent="handleSubmit" class="flex gap-2">
       <input
         v-model="newTask"
         type="text"
