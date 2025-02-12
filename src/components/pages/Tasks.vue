@@ -1,6 +1,6 @@
 <script setup>
 import { useTaskStore } from "../../stores/TaskStore";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const taskStore = useTaskStore();
 const newTask = ref("");
 
@@ -11,6 +11,12 @@ const handleSubmit = () => {
 </script>
 
 <template>
+  <button
+    class="cursor-pointer float-right bg-blue-500 text-white px-4 py-2 rounded"
+    @click="taskStore.loadTasks"
+  >
+    Load Tasks from REST API
+  </button>
   <h1 class="text-4xl font-bold py-4">Tasks</h1>
 
   <div class="flex gap-2 py-2 justify-between">

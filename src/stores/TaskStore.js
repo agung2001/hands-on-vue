@@ -42,6 +42,19 @@ export const useTaskStore = defineStore('taskStore', {
     },
   },
   actions: {
+    async loadTasks() {
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=5');
+        const data = await response.json();
+        this.tasks = data.map((task) => ({
+          id: task.id,
+          title: task.title,
+          completed: task.completed,
+        }));
+      } catch (error) {
+        console.error('Error loading tasks:', error);
+      }
+    },
     addTask(title) {
       this.tasks.push({ id: this.tasks.length + 1, title, completed: false });
     },
